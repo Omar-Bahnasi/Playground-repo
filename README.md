@@ -1,63 +1,63 @@
-# Astro Starter Kit: Blog
+# Astro Blog Playground
 
-```sh
-npm create astro@latest -- --template blog
-```
+A small, hands-on blog built with [Astro](https://astro.build/). This project is a space for experimenting with pages, layouts, components, content collections, and blog styling without the overhead of a larger application.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The playground currently includes:
 
-Features:
+- A home page with links to the blog and about page
+- A blog index with individual post routes
+- Markdown and MDX posts with typed frontmatter
+- Reusable page, header, footer, and post layout components
+- Local fonts and image assets
+- RSS feed and sitemap integrations
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and Open Graph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
+## Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
 
 ```text
-├── public/
+├── public/                 # Static files served as-is
 ├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
+│   ├── assets/             # Images and local fonts
+│   ├── components/         # Shared Astro components
+│   ├── content/blog/       # Markdown and MDX posts
+│   ├── layouts/            # Reusable page layouts
+│   ├── pages/              # Routes, including the RSS feed
+│   └── styles/             # Global styles
+├── astro.config.mjs        # Astro and integration setup
 ├── package.json
 └── tsconfig.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Run Locally
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Use Node.js `22.12.0` or newer, then run:
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+```sh
+npm install
+npm run dev
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+Open [http://localhost:4321](http://localhost:4321) to view the blog. The development server reloads as you edit pages, components, styles, or content.
 
-## 🧞 Commands
+## Common Commands
 
-All commands are run from the root of the project, from a terminal:
+Run these commands from the project root:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Command | Purpose |
+| :-- | :-- |
+| `npm run dev` | Start the local development server |
+| `npm run build` | Build the production site in `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run astro -- check` | Check the project for Astro errors |
 
-## 👀 Want to learn more?
+## Where to Experiment
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Add or edit posts in `src/content/blog/`.
+- Update the site title and description in `src/consts.ts`.
+- Adjust navigation in `src/components/Header.astro`.
+- Change the global visual style in `src/styles/global.css`.
+- Customize post structure in `src/layouts/BlogPost.astro`.
 
-## Credit
+See the [Astro documentation](https://docs.astro.build/) for guides on routing, content collections, integrations, and deployment.
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
