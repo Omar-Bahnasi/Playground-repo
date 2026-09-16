@@ -12,38 +12,213 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	</head>
 	<body>
 		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+		<main class="profile">
+			<section class="hero" aria-labelledby="intro-title">
+				<p class="eyebrow">Software engineer · Product builder · Mentor</p>
+				<h1 id="intro-title">Hi, I’m John Doe.</h1>
+				<p class="intro">
+					I design and build dependable software that makes complex work feel simple. I care about thoughtful
+					interfaces, resilient systems, and teams that enjoy solving hard problems together.
+				</p>
+				<div class="hero-actions">
+					<a class="button primary" href="/about">More about me</a>
+					<a class="button secondary" href="/blog">Read my writing</a>
+				</div>
+			</section>
+
+			<section class="section" aria-labelledby="work-title">
+				<div class="section-heading">
+					<p class="eyebrow">Selected work</p>
+					<h2 id="work-title">What I’ve done</h2>
+				</div>
+				<div class="work-grid">
+					<article class="work-card">
+						<span class="card-number">01</span>
+						<h3>Built a faster platform</h3>
+						<p>Led the redesign of a data platform used by 40,000 teams, reducing average load times by 62%.</p>
+					</article>
+					<article class="work-card">
+						<span class="card-number">02</span>
+						<h3>Grew strong teams</h3>
+						<p>Established practical engineering rituals that helped a growing product team ship with confidence.</p>
+					</article>
+					<article class="work-card">
+						<span class="card-number">03</span>
+						<h3>Shared what I learned</h3>
+						<p>Write about software architecture, humane leadership, and the small details that make products better.</p>
+					</article>
+				</div>
+			</section>
+
+			<section class="section split-section" aria-labelledby="now-title">
+				<div>
+					<p class="eyebrow">Right now</p>
+					<h2 id="now-title">What I’m focused on</h2>
+				</div>
+				<div class="focus-list">
+					<div><strong>Building</strong><span>Calm, capable tools for teams doing meaningful work.</span></div>
+					<div><strong>Learning</strong><span>Distributed systems, accessible design, and better technical storytelling.</span></div>
+					<div><strong>Looking for</strong><span>Collaborators who value curiosity, clarity, and a job well done.</span></div>
+				</div>
+			</section>
+
+			<section class="contact" aria-labelledby="contact-title">
+				<p class="eyebrow">Have a good idea?</p>
+				<h2 id="contact-title">Let’s make something useful.</h2>
+				<a href="mailto:john.doe@example.com">john.doe@example.com</a>
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.profile {
+		max-width: 960px;
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+	}
+	.hero {
+		max-width: 760px;
+		padding: 3rem 0 5rem;
+	}
+	.eyebrow {
+		margin: 0 0 1rem;
+		color: var(--accent-dark);
+		font-size: 0.75rem;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		line-height: 1.4;
+		text-transform: uppercase;
+	}
+	h1 {
+		max-width: 700px;
+		font-size: clamp(3.5rem, 9vw, 6.5rem);
+		letter-spacing: -0.04em;
+	}
+	.intro {
+		max-width: 650px;
+		margin: 1.5rem 0 2rem;
+		color: rgb(var(--gray-dark));
+		font-size: 1.25rem;
+		line-height: 1.55;
+	}
+	.hero-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+	}
+	.button {
+		display: inline-block;
+		padding: 0.7rem 1.1rem;
+		border: 1px solid var(--accent);
+		border-radius: 4px;
+		font-size: 0.95rem;
+		font-weight: 700;
+		text-decoration: none;
+	}
+	.button.primary {
+		background: var(--accent);
+		color: white;
+	}
+	.button.secondary {
+		background: transparent;
+		color: var(--accent-dark);
+	}
+	.section {
+		padding: 4rem 0;
+		border-top: 1px solid rgb(var(--gray-light));
+	}
+	.section-heading {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 2rem;
+		margin-bottom: 2rem;
+	}
+	.section h2,
+	.contact h2 {
+		font-size: clamp(2rem, 4vw, 3rem);
+		letter-spacing: -0.03em;
+	}
+	.work-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+	}
+	.work-card {
+		min-height: 210px;
+		padding: 1.5rem;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 6px;
+		background: rgba(255, 255, 255, 0.65);
+	}
+	.card-number {
+		color: var(--accent);
+		font-size: 0.8rem;
+		font-weight: 700;
+	}
+	.work-card h3 {
+		margin-top: 2.5rem;
+		font-size: 1.35rem;
+	}
+	.work-card p {
+		margin-bottom: 0;
+		font-size: 0.95rem;
+		line-height: 1.55;
+	}
+	.split-section {
+		display: grid;
+		grid-template-columns: 0.8fr 1.2fr;
+		gap: 4rem;
+	}
+	.focus-list > div {
+		display: grid;
+		grid-template-columns: 130px 1fr;
+		gap: 1rem;
+		padding: 1rem 0;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		font-size: 1rem;
+	}
+	.focus-list > div:first-child {
+		padding-top: 0;
+	}
+	.focus-list strong {
+		color: rgb(var(--black));
+	}
+	.contact {
+		padding: 4rem 2rem;
+		border-radius: 6px;
+		background: rgb(var(--black));
+		color: white;
+		text-align: center;
+	}
+	.contact h2 {
+		color: white;
+	}
+	.contact a {
+		color: #b9c2ff;
+		font-weight: 700;
+	}
+	@media (max-width: 720px) {
+		.profile {
+			padding-top: 2rem;
+		}
+		.hero {
+			padding-top: 2rem;
+		}
+		.section-heading,
+		.split-section {
+			display: block;
+		}
+		.section-heading .eyebrow {
+			margin-bottom: 0.5rem;
+		}
+		.work-grid {
+			grid-template-columns: 1fr;
+		}
+		.split-section h2 {
+			margin-bottom: 2rem;
+		}
+	}
+</style>
